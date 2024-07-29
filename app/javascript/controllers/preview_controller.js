@@ -6,22 +6,24 @@ export default class extends Controller {
   };
 
   static targets = [
-    "form",
-    "frame"
+    "form"
   ];
 
-  connect() {
-    this.update();
-  }
+  async update() {
+    const form = new FormData(this.formTarget);
 
-  update() {
-    const formData = new FormData(this.formTarget);
-    const params   = new URLSearchParams(formData);
-    const url      = new URL(this.urlValue, location.origin);
+    form.delete("_method");
 
-    url.search = params;
+    const res = await fetch(this.urlValue, {
+      method: "POST",
 
-    this.frameTarget.src = url;
-    this.frameTarget.reload();
+      headers: {
+        "X-CSRF-Token": document.head.querySelector("[name=csrf-token]").content
+      },
+
+      body: form
+    });
+
+    Turbo.renderStreamMessage(await res.text());
   }
 }

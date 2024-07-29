@@ -46,9 +46,9 @@ class Admin::PostsController < ApplicationController
   end
 
   def preview
-    @post = Post.new(post_params)
+    post = Post.new(post_params)
 
-    render layout: false
+    render turbo_stream: turbo_stream.update("preview", partial: "posts/post", locals: { post: })
   end
 
   private

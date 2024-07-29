@@ -42,6 +42,8 @@
   </div>
 
   <div class="col-6">
-    <%= turbo_frame_tag "preview", data: {preview_target: "frame"} %>
+    <div id="preview">
+      <%= render "posts/post", post: %>
+    </div>
   </div>
 </div>
