@@ -1,0 +1,23 @@
+Rails.application.routes.draw do
+  get "up"             => "rails/health#show", as: :rails_health_check
+  get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  get "manifest"       => "rails/pwa#manifest", as: :pwa_manifest
+
+  root "posts#index"
+
+  resources :years, only: :show, param: :year do
+    resources :months, only: :show, param: :month do
+      resources :days, only: :show, param: :day
+    end
+  end
+
+  resource :feed, only: %i[show], constraints: { format: :atom }
+
+  namespace :admin do
+    root "posts#index"
+
+    resources :posts, only: %i[new create edit update destroy] do
+      get :preview, on: :collection
+    end
+  end
+end

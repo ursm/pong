@@ -1,0 +1,17 @@
+<div>
+  <%= link_to 'New Post', new_admin_post_path, class: 'btn btn-outline-primary' %>
+</div>
+
+<div class="list-group">
+  <% @posts.each do |post| %>
+    <%= link_to edit_admin_post_path(post), class: 'list-group-item list-group-item-action d-flex gap-3' do %>
+      <div>
+        <%= post.date %>
+      </div>
+
+      <div class="text-truncate text-muted">
+        <%= strip_tags(post.rendered_body) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

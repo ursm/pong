@@ -1,0 +1,94 @@
+@import url(props.css);
+@import url(article.css);
+
+.m-0 {
+  margin: 0;
+}
+
+.mt-1 {
+  margin-top: calc(1rem * pow(var(--ratio), 1));
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.stack {
+  > * + * {
+    margin-top: calc(1rem * pow(var(--ratio), 1)) !important;
+  }
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(1rem * pow(var(--ratio), -3));
+}
+
+ul.unstyled, ol.unstyled {
+  padding: 0;
+
+  > li {
+    list-style-type: none;
+  }
+}
+
+dl.horizontal {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: calc(1rem * pow(var(--ratio), -2));
+
+  dt {
+    grid-column: 1;
+  }
+
+  dd {
+    grid-column: 2;
+    margin: 0;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: var(--ratio);
+  background-color: var(--color-sumi);
+  color: var(--color-sumi);
+}
+
+a {
+  color: var(--color-sumi);
+  text-decoration-color: color-mix(in hsl, white 50%, var(--color-sumi));
+}
+
+hr {
+  border-color: var(--color-sumi);
+  border-width: calc(1rem * pow(var(--ratio), -2) / 2);
+}
+
+.container {
+  max-width: 75ch;
+  background-color: var(--color-bg);
+  margin: 0 auto;
+  padding: calc(1rem * pow(var(--ratio), 1));
+}
+
+ol.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: calc(1rem * pow(var(--ratio), 2));
+
+  > li:not(:last-child)::after {
+    content: '/';
+    margin: 0 calc(1rem * pow(var(--ratio), -2));
+    color: color-mix(in hsl, white 50%, var(--color-sumi));
+  }
+}

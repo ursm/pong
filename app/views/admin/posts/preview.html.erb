@@ -1,0 +1,7 @@
+<%= turbo_frame_tag "preview" do %>
+  <article>
+    <h1><%= @post.date %></h1>
+
+    <%= @post.rendered_body %>
+  </article>
+<% end %>
