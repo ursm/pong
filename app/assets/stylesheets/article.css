@@ -1,20 +1,20 @@
 article {
   h1 {
-    margin-top: calc(1rem * pow(var(--ratio), 1));
-    margin-bottom: calc(1rem * pow(var(--ratio), 0));
+    margin-top: calc(1rem * pow(var(--ratio), 1.5));
+    margin-bottom: calc(1rem * pow(var(--ratio), 1));
     font-size: calc(1rem * pow(var(--ratio), 1.5));
   }
 
   h2 {
-    margin-top: calc(1rem * pow(var(--ratio), 0));
-    margin-bottom: calc(1rem * pow(var(--ratio), -1));
+    margin-top: calc(1rem * pow(var(--ratio), 1));
+    margin-bottom: calc(1rem * pow(var(--ratio), 0.5));
     font-size: calc(1rem * pow(var(--ratio), 1));
   }
 
   h3 {
-    margin-top: calc(1rem * pow(var(--ratio), -1));
-    margin-bottom: calc(1rem * pow(var(--ratio), -2));
-    font-size: calc(1rem * pow(var(--ratio), 0));
+    margin-top: calc(1rem * pow(var(--ratio), 0.5));
+    margin-bottom: calc(1rem * pow(var(--ratio), 0));
+    font-size: calc(1rem * pow(var(--ratio), 0.5));
   }
 
   p {
@@ -24,7 +24,7 @@ article {
 
   pre {
     padding: calc(1rem * pow(var(--ratio), 0));
-    font-size: calc(1rem * pow(var(--ratio), 0));
+    font-size: 1rem;
     white-space: pre-wrap;
   }
 
@@ -42,6 +42,10 @@ article {
     *:last-child {
       margin-bottom: 0;
     }
+  }
+
+  code {
+    font-size: 1rem;
   }
 
   img {
