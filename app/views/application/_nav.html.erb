@@ -1,0 +1,13 @@
+<%# locals: (label:, items:) %>
+
+<dl class="horizontal m-0">
+  <dt><%= label %></dt>
+
+  <dd>
+    <ul class="unstyled cluster">
+      <% items.each do |item| %>
+        <li><%= yield item %></li>
+      <% end %>
+    </ul>
+  </dd>
+</dl>

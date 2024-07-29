@@ -1,0 +1,7 @@
+<% y, m, d = [post.date.year] + [post.date.month, post.date.day].map { _1.to_s.rjust(2, '0') } %>
+
+<article>
+  <h1><%= link_to y, year_path(y) %>-<%= link_to m, year_month_path(y, m) %>-<%= link_to d, year_month_day_path(y, m, d) %></h1>
+
+  <%= post.rendered_body %>
+</article>

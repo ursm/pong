@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title><%= content_for(:title) || "pong.ursm.jp" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="container vstack gap-3">
+      <nav aria-label="breadcrumb" class="mt-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item">
+            <%= link_to 'pong.ursm.jp', :root %>
+          </li>
+
+          <%= tag.li class: ['breadcrumb-item', active: current_page?(:admin_root)] do %>
+            <%= link_to_unless_current 'admin', :admin_root %>
+          <% end %>
+
+          <%= yield :breadcrumb %>
+        </ol>
+      </nav>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
+
