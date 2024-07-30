@@ -4,16 +4,16 @@ one:
     This is the first post.
 
 two:
-  date: 2024-08-01
+  date: 2024-12-01
   body: |
     This is the second post.
 
 three:
-  date: 2024-07-02
+  date: 2024-11-02
   body: |
     This is the third post.
 
 four:
-  date: 2024-07-01
+  date: 2024-11-01
   body: |
     This is the fourth post.

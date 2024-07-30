@@ -14,13 +14,13 @@ class SmokeTest < ActionDispatch::IntegrationTest
   end
 
   test "month" do
-    get "/years/2024/months/07"
+    get "/years/2024/months/11"
 
     assert_select "article", 2
   end
 
   test "day" do
-    get "/years/2024/months/07/days/01"
+    get "/years/2024/months/11/days/01"
 
     assert_select "article", 1
   end
