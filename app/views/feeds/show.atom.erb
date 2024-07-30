@@ -8,10 +8,12 @@
   <updated><%= @posts.first.created_at.iso8601 %></updated>
 
   <% @posts.each do |post| %>
+    <% y, m, d = [post.date.year] + [post.date.month, post.date.day].map { _1.to_s.rjust(2, '0') } %>
+
     <entry>
       <title><%= post.date %></title>
-      <link href="<%= year_month_day_url(post.year, post.month, post.day) %>" />
-      <id><%= year_month_day_url(post.year, post.month, post.day) %></id>
+      <link href="<%= year_month_day_url(y, m, d) %>" />
+      <id><%= year_month_day_url(y, m, d) %></id>
       <updated><%= post.created_at.iso8601 %></updated>
 
       <content type="html">
