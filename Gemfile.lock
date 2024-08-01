@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 3acf87e26d3171e0e385aa7301389bda9bebb0f8
+  revision: a48c39859bc09044ec18bc3501ca357915adb590
   specs:
     actioncable (8.0.0.alpha)
       actionpack (= 8.0.0.alpha)
@@ -70,6 +70,7 @@ GIT
       i18n (>= 1.6, < 2)
       logger (>= 1.4.2)
       minitest (>= 5.1)
+      securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
     rails (8.0.0.alpha)
       actioncable (= 8.0.0.alpha)
@@ -231,7 +232,7 @@ GEM
     public_suffix (6.0.1)
     puma (6.4.2)
       nio4r (~> 2.0)
-    racc (1.8.0)
+    racc (1.8.1)
     rack (3.1.7)
     rack-session (2.0.0)
       rack (>= 3.0.0)
@@ -291,6 +292,7 @@ GEM
       ffi (~> 1.12)
       logger
     rubyzip (2.3.2)
+    securerandom (0.3.1)
     selenium-webdriver (4.23.0)
       base64 (~> 0.2)
       logger (~> 1.4)
