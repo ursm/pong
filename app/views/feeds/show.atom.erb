@@ -4,6 +4,7 @@
   <title>pong.ursm.jp</title>
   <link href="<%= root_url %>" />
   <link rel="self" href="<%= feed_url(format: :atom) %>" />
+  <link rel="hub" href="https://pubsubhubbub.appspot.com" />
   <id><%= root_url %></id>
   <updated><%= @posts.first.created_at.iso8601 %></updated>
 

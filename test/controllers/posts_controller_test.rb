@@ -1,7 +1,9 @@
 require "test_helper"
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "#index" do
+    get "/"
+
+    assert_select "article", 4
+  end
 end

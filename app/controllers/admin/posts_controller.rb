@@ -19,6 +19,8 @@ class Admin::PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      publish
+
       redirect_to admin_root_path
     else
       render :new, status: :unprocessable_entity
@@ -33,6 +35,8 @@ class Admin::PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update(post_params)
+      publish
+
       redirect_to admin_root_path
     else
       render :edit, status: :unprocessable_entity
@@ -55,5 +59,18 @@ class Admin::PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:date, :body)
+  end
+
+  def publish
+    return unless ENV["WEBSUB"] == "true"
+
+    Fetch::API.fetch "https://pubsubhubbub.appspot.com/publish", **{
+      method: "POST",
+
+      body: Fetch::URLSearchParams.new(
+        "hub.mode": "publish",
+        "hub.url":  feed_url(format: :atom)
+      )
+    }
   end
 end
