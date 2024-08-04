@@ -26,6 +26,9 @@ registry:
 # Inject ENV variables into containers (secrets come from .env).
 # Remember to run `kamal env push` after making changes!
 env:
+  clear:
+    WEBSUB: 'true'
+
   secret:
     - ADMIN_AUTH
     - RAILS_MASTER_KEY

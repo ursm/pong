@@ -4,6 +4,7 @@ gem "rails", github: "rails/rails"
 
 gem "bootsnap", require: false
 gem "commonmarker"
+gem "fetch-api"
 gem "image_processing", "~> 1.2"
 gem "importmap-rails"
 gem "kamal", require: false
@@ -25,5 +26,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "climate_control"
   gem "selenium-webdriver"
+  gem "webmock"
 end
