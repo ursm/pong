@@ -12,6 +12,7 @@ gem "propshaft"
 gem "puma", ">= 5.0"
 gem "sqlite3", ">= 1.4"
 gem "stimulus-rails"
+gem "thruster"
 gem "turbo-rails"
 
 group :development, :test do
