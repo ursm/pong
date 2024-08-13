@@ -28,7 +28,7 @@
             <%= link_to "pong.ursm.jp", :root %>
           </li>
 
-          <%= tag.li class: ["breadcrumb-item", active: current_page?(:admin_root)] do %>
+          <%= tag.li class: [ "breadcrumb-item", active: current_page?(:admin_root) ] do %>
             <%= link_to_unless_current "admin", :admin_root %>
           <% end %>
 

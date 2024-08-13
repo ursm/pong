@@ -105,6 +105,13 @@ GEM
     bcrypt_pbkdf (1.1.1)
     bcrypt_pbkdf (1.1.1-arm64-darwin)
     bcrypt_pbkdf (1.1.1-x86_64-darwin)
+    better_html (2.1.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
@@ -285,6 +292,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.31.3)
       parser (>= 3.3.1.0)
+    rubocop-erb (0.5.3)
+      better_html
+      rubocop (~> 1.45)
     rubocop-minitest (0.35.1)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -314,6 +324,7 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     singleton (0.2.0)
+    smart_properties (1.17.0)
     sqlite3 (2.0.3-aarch64-linux-gnu)
     sqlite3 (2.0.3-aarch64-linux-musl)
     sqlite3 (2.0.3-arm-linux-gnu)
@@ -396,6 +407,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails!
+  rubocop-erb
   rubocop-rails-omakase
   selenium-webdriver
   sqlite3 (>= 1.4)

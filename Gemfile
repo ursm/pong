@@ -18,6 +18,7 @@ gem "turbo-rails"
 group :development, :test do
   gem "brakeman", require: false
   gem "debug", require: "debug/prelude"
+  gem "rubocop-erb", require: false
   gem "rubocop-rails-omakase", require: false
 end
 

@@ -10,7 +10,7 @@
 
 <div class="row" data-controller="preview" data-preview-url-value="<%= preview_admin_posts_path %>">
   <div class="col-6">
-    <%= form_with model: post, url: [:admin, post], data: {
+    <%= form_with model: post, url: [ :admin, post ], data: {
       controller:                         "attachment",
       action:                             "attachment:linkInserted->preview#update",
       attachment_direct_upload_url_value: rails_direct_uploads_path,
@@ -18,12 +18,12 @@
       preview_target:                     "form"
     } do |form| %>
       <div class="mb-3">
-        <%= form.label :date, 'Date', class: "form-label" %>
+        <%= form.label :date, "Date", class: "form-label" %>
         <%= form.date_field :date, required: true, class: "form-control" %>
       </div>
 
       <div class="mb-3">
-        <%= form.label :body, 'Body', class: "form-label" %>
+        <%= form.label :body, "Body", class: "form-label" %>
 
         <%= form.text_area :body, class: "form-control", required: true, data: {
           controller:        "autosize",

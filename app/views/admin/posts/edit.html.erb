@@ -2,8 +2,8 @@
   <li class="breadcrumb-item active"><%= @post.date %></li>
 <% end %>
 
-<%= render 'form', post: @post %>
+<%= render "form", post: @post %>
 
 <hr />
 
-<%= button_to 'Delete', admin_post_path(@post), method: :delete, class: 'btn btn-danger' %>
+<%= button_to "Delete", admin_post_path(@post), method: :delete, class: "btn btn-danger" %>

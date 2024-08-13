@@ -5,11 +5,11 @@
 <% content_for :nav do %>
   <% months = @posts.order(:date).distinct.pluck(Arel.sql("STRFTIME('%m', date)")) %>
 
-  <%= render 'nav', label: 'Month', items: months do |month| %>
+  <%= render "nav", label: "Month", items: months do |month| %>
     <%= link_to month, year_month_path(@year, month) %>
   <% end %>
 <% end %>
 
 <% @posts.each do |post| %>
-  <%= render 'posts/post', post: %>
+  <%= render "posts/post", post: %>
 <% end %>
