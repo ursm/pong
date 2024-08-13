@@ -20,4 +20,10 @@ Rails.application.routes.draw do
       post :preview, on: :collection
     end
   end
+
+  direct :post do |post|
+    year, month, day = post.date.to_s.split("-")
+
+    [ :year_month_day, year_year: year, month_month: month, day: ]
+  end
 end
