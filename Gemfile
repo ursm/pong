@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", github: "rails/rails"
+gem "rails", "~> 8.0.0.beta"
 
 gem "bootsnap", require: false
 gem "commonmarker"
@@ -10,7 +10,10 @@ gem "importmap-rails"
 gem "kamal", require: false
 gem "propshaft"
 gem "puma", ">= 5.0"
-gem "sqlite3", ">= 1.4"
+gem "solid_cable"
+gem "solid_cache"
+gem "solid_queue"
+gem "sqlite3"
 gem "stimulus-rails"
 gem "thruster"
 gem "turbo-rails"
