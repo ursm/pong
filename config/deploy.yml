@@ -17,7 +17,7 @@ servers:
 # Set ssl: false if using something like Cloudflare to terminate SSL (but keep host!).
 proxy:
   ssl: false
-  host: app.example.com
+  host: pong.ursm.jp
 
 # Credentials for your image host.
 registry:
