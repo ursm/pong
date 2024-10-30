@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 8.0.0.rc"
+gem "rails", "~> 8.0.0.rc2"
 
 gem "bootsnap", require: false
 gem "commonmarker"
