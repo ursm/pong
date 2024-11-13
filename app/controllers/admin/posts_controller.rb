@@ -58,7 +58,7 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:date, :body)
+    params.expect(post: %i[date body])
   end
 
   def publish
