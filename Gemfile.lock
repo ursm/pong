@@ -327,7 +327,7 @@ GEM
       websocket (~> 1.0)
     singleton (0.2.0)
     smart_properties (1.17.0)
-    solid_cable (3.0.2)
+    solid_cable (3.0.4)
       actioncable (>= 7.2)
       activejob (>= 7.2)
       activerecord (>= 7.2)
