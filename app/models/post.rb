@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   has_many_attached :attachments
 
-  validates :date, presence: true, uniqueness: true
-  validates :body, presence: true
+  validates :title, presence: true
+  validates :body,  presence: true
 
   before_save :set_attachments
   after_commit :purge_unattached_blobs

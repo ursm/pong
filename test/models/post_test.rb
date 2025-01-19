@@ -15,7 +15,7 @@ class PostTest < ActiveSupport::TestCase
     )
 
     post = Post.create!(
-      date: "2024-07-01",
+      title: "Hello, world!",
 
       body: <<~MARKDOWN
         [Link](/rails/active_storage/blobs/proxy/#{text.signed_id}/empty.txt)

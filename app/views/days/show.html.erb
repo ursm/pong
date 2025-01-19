@@ -1,7 +1,0 @@
-<% content_for :breadcrumb do %>
-  <li><%= link_to @year, year_path(@year) %></li>
-  <li><%= link_to @month, year_month_path(@year, @month) %></li>
-  <li><%= @day %></li>
-<% end %>
-
-<%= render "posts/post", post: @post %>

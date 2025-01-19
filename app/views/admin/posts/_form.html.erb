@@ -18,8 +18,13 @@
       preview_target:                     "form"
     } do |form| %>
       <div class="mb-3">
-        <%= form.label :date, "Date", class: "form-label" %>
-        <%= form.date_field :date, required: true, class: "form-control" %>
+        <%= form.label :title, class: "form-label" %>
+
+        <%= form.text_field :title, **{
+          required: true,
+          class:    "form-control",
+          data:     { action: "preview#update" }
+        } %>
       </div>
 
       <div class="mb-3">

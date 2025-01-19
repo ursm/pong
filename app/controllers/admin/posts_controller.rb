@@ -8,11 +8,11 @@ class Admin::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order(date: :desc)
+    @posts = Post.order(id: :desc)
   end
 
   def new
-    @post = Post.new(date: Date.current)
+    @post = Post.new
   end
 
   def create
@@ -44,7 +44,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def destroy
-    Post.find(params[:id]).destroy!
+    Post.find(params.expect(:id)).destroy!
 
     redirect_to admin_root_path
   end
@@ -58,7 +58,7 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.expect(post: %i[date body])
+    params.expect(post: %i[title body])
   end
 
   def publish
@@ -69,7 +69,7 @@ class Admin::PostsController < ApplicationController
 
       body: Fetch::URLSearchParams.new(
         "hub.mode": "publish",
-        "hub.url":  feed_url(format: :atom)
+        "hub.url":  posts_url(format: :atom)
       )
     }
   end

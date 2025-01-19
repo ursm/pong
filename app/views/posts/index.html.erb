@@ -1,11 +1,1 @@
-<% content_for :nav do %>
-  <% years = Post.order(date: :desc).distinct.pluck(Arel.sql("STRFTIME('%Y', date)")) %>
-
-  <%= render "nav", label: "Year", items: years do |year| %>
-    <%= link_to year, year_path(year) %>
-  <% end %>
-<% end %>
-
-<% @posts.each do |post| %>
-  <%= render "post", post: %>
-<% end %>
+<%= render partial: "post", collection: @posts %>

@@ -1,19 +1,19 @@
 one:
-  date: 2025-01-01
+  title: First
   body: |
     This is the first post.
 
 two:
-  date: 2024-12-01
+  title: Second
   body: |
     This is the second post.
 
 three:
-  date: 2024-11-02
+  title: Third
   body: |
     This is the third post.
 
 four:
-  date: 2024-11-01
+  title: Fourth
   body: |
     This is the fourth post.

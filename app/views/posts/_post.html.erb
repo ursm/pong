@@ -1,7 +1,5 @@
-<% y, m, d = post.date.to_s.split("-") %>
-
 <article>
-  <h1><%= link_to y, year_path(y) %>-<%= link_to m, year_month_path(y, m) %>-<%= link_to d, year_month_day_path(y, m, d) %></h1>
-
+  <h1><%= link_to post.title, post %></h1>
   <%= post.rendered_body %>
+  <date><%= l post.created_at&.to_date || Date.current %></date>
 </article>

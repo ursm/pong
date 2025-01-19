@@ -9,8 +9,8 @@ class Admin::PostsControllerTest < ActionDispatch::IntegrationTest
     ClimateControl.modify ADMIN_AUTH: nil, WEBSUB: "true" do
       post "/admin/posts", params: {
         post: {
-          date: "2024-07-31",
-          body: "This is a new post."
+          title: "New Post",
+          body:  "This is a new post."
         }
       }
     end
@@ -25,7 +25,8 @@ class Admin::PostsControllerTest < ActionDispatch::IntegrationTest
     ClimateControl.modify ADMIN_AUTH: nil, WEBSUB: "true" do
       patch "/admin/posts/#{post.id}", params: {
         post: {
-          body: "This is an updated post."
+          title: "Updated Post",
+          body:  "This is an updated post."
         }
       }
     end
@@ -44,7 +45,7 @@ class Admin::PostsControllerTest < ActionDispatch::IntegrationTest
 
       body: {
         "hub.mode" => "publish",
-        "hub.url"  => "http://www.example.com/feed.atom"
+        "hub.url"  => "http://www.example.com/posts.atom"
       }
     }
   end
