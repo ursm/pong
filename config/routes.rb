@@ -14,4 +14,6 @@ Rails.application.routes.draw do
       post :preview, on: :collection
     end
   end
+
+  get "feed.atom", to: redirect("posts.atom")
 end
