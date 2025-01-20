@@ -3,9 +3,8 @@
 <% content_for :head do %>
   <meta name="description" content="<%= strip_tags(@post.rendered_body).strip.truncate(120) %>">
   <meta property="og:url" content="<%= post_url(@post) %>">
-  <meta property="og:type" content="article">
   <meta property="og:title" content="<%= @post.title %>">
-  <meta property="og:image" content="<%= root_url %>icon.png">
+  <meta name="twitter:card" content="summary">
 <% end %>
 
 <%= render @post %>
