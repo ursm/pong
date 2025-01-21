@@ -76,7 +76,7 @@ hr {
 }
 
 .container {
-  max-width: 80ch;
+  max-width: 100ch;
   background-color: var(--color-bg);
   margin: 0 auto;
   padding: calc(1rem * pow(var(--ratio), 1));

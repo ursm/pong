@@ -20,7 +20,7 @@
     <link rel="alternate" type="application/atom+xml" href="<%= posts_url(format: :atom) %>">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag :application, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -31,8 +31,6 @@
           <li><%= link_to "pong.ursm.jp", :root %></li>
         </ol>
       </nav>
-
-      <hr class="m-0" />
 
       <main class="stack">
         <%= yield %>
