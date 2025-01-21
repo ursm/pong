@@ -6,7 +6,7 @@ servers:
     - bastion
 
 proxy:
-  ssl: false
+  ssl: true
   host: pong.ursm.jp
 
 registry:
