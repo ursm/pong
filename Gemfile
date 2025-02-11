@@ -5,7 +5,7 @@ gem "rails", "~> 8.0.1"
 gem "bootsnap", require: false
 gem "commonmarker"
 gem "fetch-api"
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.14"
 gem "importmap-rails"
 gem "kamal", require: false
 gem "propshaft"
