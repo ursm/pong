@@ -11,12 +11,12 @@
 <%= form_with model: post, url: [ :admin, post ] do |form| %>
   <div class="mb-3">
     <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, required: true, class: "form-control" %>
+    <%= form.text_field :title, class: "form-control", required: true %>
   </div>
 
   <div class="mb-3">
     <%= form.label :body, "Body", class: "form-label" %>
-    <%= form.marksmith :body, class: "form-control", required: true %>
+    <%= form.marksmith :body, required: true %>
   </div>
 
   <button type="submit" class="btn btn-primary">Save</button>
