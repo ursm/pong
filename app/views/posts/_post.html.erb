@@ -1,5 +1,5 @@
 <article>
   <h1><%= link_to post.title, post %></h1>
-  <%= post.rendered_body %>
+  <%== marksmithed post.body %>
   <date><%= l post.created_at&.to_date || Date.current %></date>
 </article>

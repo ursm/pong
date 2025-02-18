@@ -16,7 +16,7 @@
       <updated><%= post.updated_at.iso8601 %></updated>
 
       <content type="html">
-        <![CDATA[<%= post.rendered_body %>]]>
+        <![CDATA[<%== marksmithed(post.body) %>]]>
       </content>
 
       <author>

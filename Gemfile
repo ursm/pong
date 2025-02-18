@@ -8,6 +8,7 @@ gem "fetch-api"
 gem "image_processing", "~> 1.2"
 gem "importmap-rails"
 gem "kamal", require: false
+gem "marksmith"
 gem "propshaft"
 gem "puma", ">= 5.0"
 gem "solid_cable"

@@ -8,47 +8,16 @@
   </ul>
 <% end %>
 
-<div class="row" data-controller="preview" data-preview-url-value="<%= preview_admin_posts_path %>">
-  <div class="col-6">
-    <%= form_with model: post, url: [ :admin, post ], data: {
-      controller:                         "attachment",
-      action:                             "attachment:linkInserted->preview#update",
-      attachment_direct_upload_url_value: rails_direct_uploads_path,
-      attachment_blob_url_template_value: rails_service_blob_path(":signed_id", ":filename"),
-      preview_target:                     "form"
-    } do |form| %>
-      <div class="mb-3">
-        <%= form.label :title, class: "form-label" %>
-
-        <%= form.text_field :title, **{
-          required: true,
-          class:    "form-control",
-          data:     { action: "preview#update" }
-        } %>
-      </div>
-
-      <div class="mb-3">
-        <%= form.label :body, "Body", class: "form-label" %>
-
-        <%= form.text_area :body, class: "form-control", required: true, data: {
-          controller:        "autosize",
-          action:            "preview#update",
-          attachment_target: "textarea"
-        } %>
-
-        <label class="btn btn-link">
-          <input type="file" multiple hidden data-action="attachment#insertLink">
-          Upload
-        </label>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Save</button>
-    <% end %>
+<%= form_with model: post, url: [ :admin, post ] do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, required: true, class: "form-control" %>
   </div>
 
-  <div class="col-6">
-    <div id="preview">
-      <%= render "posts/post", post: %>
-    </div>
+  <div class="mb-3">
+    <%= form.label :body, "Body", class: "form-label" %>
+    <%= form.marksmith :body, class: "form-control", required: true %>
   </div>
-</div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+<% end %>

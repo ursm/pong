@@ -7,12 +7,6 @@ class Post < ApplicationRecord
   before_save :set_attachments
   after_commit :purge_unattached_blobs
 
-  def rendered_body
-    return "" unless body
-
-    Commonmarker.to_html(body).html_safe
-  end
-
   private
 
   def set_attachments

@@ -1,7 +1,7 @@
 <% @page_title = @post.title %>
 
 <% content_for :head do %>
-  <meta name="description" content="<%= strip_tags(@post.rendered_body).strip.truncate(120) %>">
+  <meta name="description" content="<%= strip_tags(marksmithed(@post.body)).strip.truncate(120) %>">
   <meta property="og:url" content="<%= post_url(@post) %>">
   <meta property="og:title" content="<%= @post.title %>">
   <meta name="twitter:card" content="summary">
