@@ -185,7 +185,7 @@ GEM
       net-pop
       net-smtp
     marcel (1.0.4)
-    marksmith (0.2.1)
+    marksmith (0.2.2)
       activesupport
     matrix (0.4.2)
     mini_magick (5.1.2)
