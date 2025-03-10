@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 8.0.1"
+gem "rails", github: "rails/rails"
 
 gem "bootsnap", require: false
 gem "commonmarker"
@@ -21,6 +21,7 @@ gem "turbo-rails"
 
 group :development, :test do
   gem "brakeman", require: false
+  gem "bundler-audit", require: false
   gem "debug", require: "debug/prelude"
   gem "rubocop-erb", require: false
   gem "rubocop-rails-omakase", require: false
