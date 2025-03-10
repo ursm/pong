@@ -1,0 +1,10 @@
+development:
+  enabled: false
+
+test:
+  enabled: false
+
+production:
+  enabled:  true
+  name:     <%= Rails.application.credentials.dig(:admin_auth, :name) %>
+  password: <%= Rails.application.credentials.dig(:admin_auth, :password) %>

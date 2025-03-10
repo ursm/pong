@@ -17,11 +17,7 @@ registry:
 
 env:
   secret:
-    - ADMIN_AUTH
     - RAILS_MASTER_KEY
-
-  clear:
-    WEBSUB: 'true'
 
 aliases:
   console: app exec --interactive --reuse "bin/rails console"

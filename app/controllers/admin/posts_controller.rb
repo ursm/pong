@@ -1,10 +1,10 @@
 class Admin::PostsController < ApplicationController
   layout "admin"
 
-  if auth = ENV["ADMIN_AUTH"]
-    name, password = auth.split(":")
+  admin_auth = Rails.application.config_for(:admin_auth)
 
-    http_basic_authenticate_with name:, password:
+  if admin_auth.enabled
+    http_basic_authenticate_with **admin_auth.slice(:name, :password)
   end
 
   def index
@@ -62,7 +62,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def publish
-    return unless ENV["WEBSUB"] == "true"
+    return unless Rails.application.config_for(:app).websub
 
     Fetch::API.fetch "https://pubsubhubbub.appspot.com/publish", **{
       method: "POST",

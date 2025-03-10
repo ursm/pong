@@ -6,14 +6,12 @@ class Admin::PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "#create" do
-    ClimateControl.modify ADMIN_AUTH: nil, WEBSUB: "true" do
-      post "/admin/posts", params: {
-        post: {
-          title: "New Post",
-          body:  "This is a new post."
-        }
+    post "/admin/posts", params: {
+      post: {
+        title: "New Post",
+        body:  "This is a new post."
       }
-    end
+    }
 
     assert_redirected_to "/admin"
     assert_published
@@ -22,14 +20,12 @@ class Admin::PostsControllerTest < ActionDispatch::IntegrationTest
   test "#update" do
     post = posts(:one)
 
-    ClimateControl.modify ADMIN_AUTH: nil, WEBSUB: "true" do
-      patch "/admin/posts/#{post.id}", params: {
-        post: {
-          title: "Updated Post",
-          body:  "This is an updated post."
-        }
+    patch "/admin/posts/#{post.id}", params: {
+      post: {
+        title: "Updated Post",
+        body:  "This is an updated post."
       }
-    end
+    }
 
     assert_redirected_to "/admin"
     assert_published
