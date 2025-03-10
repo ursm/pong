@@ -1,0 +1,8 @@
+development:
+  websub: false
+
+test:
+  websub: true
+
+production:
+  websub: true
