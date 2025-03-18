@@ -17,7 +17,13 @@ registry:
 
 env:
   secret:
+    - LITESTREAM_REPLICA_ENDPOINT
     - RAILS_MASTER_KEY
+
+  clear:
+    LITESTREAM_IN_PUMA:  true
+    SOLID_QUEUE_IN_PUMA: true
+    TZ:                  Asia/Tokyo
 
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
