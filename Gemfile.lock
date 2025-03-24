@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 82cfd9a4e0e8acd4ae96e775e1eaeba70947558e
+  revision: 9f39c019243138d73bb265ec32da9aee26b2c18f
   specs:
     actioncable (8.1.0.alpha)
       actionpack (= 8.1.0.alpha)
@@ -343,7 +343,7 @@ GEM
     rake-compiler-dock (1.9.1)
     rb_sys (0.9.111)
       rake-compiler-dock (= 1.9.1)
-    rdoc (6.12.0)
+    rdoc (6.13.0)
       psych (>= 4.0.0)
     regexp_parser (2.10.0)
     reline (0.6.0)
