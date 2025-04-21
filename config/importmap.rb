@@ -10,4 +10,3 @@ pin "@hotwired/turbo-rails", to: "turbo.min.js"
 
 pin "@avo-hq/marksmith", to: "@avo-hq--marksmith.js", preload: false # @0.4.0
 pin "@rails/activestorage", to: "@rails--activestorage.js", preload: false # @8.0.200
-pin "stimulus-use", preload: false # @0.52.3
