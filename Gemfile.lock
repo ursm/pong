@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: e9ee790d694298b8a48d44cd089934e6c8bc7597
+  revision: b61318bd1c74899f9d78ead412b721292ab30efc
   specs:
     actioncable (8.1.0.alpha)
       actionpack (= 8.1.0.alpha)
@@ -151,7 +151,7 @@ GEM
     climate_control (1.2.0)
     commonmarker (2.3.0-x86_64-linux)
     concurrent-ruby (1.3.5)
-    connection_pool (2.5.1)
+    connection_pool (2.5.3)
     crack (1.0.0)
       bigdecimal
       rexml
