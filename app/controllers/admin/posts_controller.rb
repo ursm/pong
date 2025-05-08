@@ -69,7 +69,7 @@ class Admin::PostsController < ApplicationController
 
       body: Fetch::URLSearchParams.new(
         "hub.mode": "publish",
-        "hub.url":  posts_url(format: :atom)
+        "hub.url":  feed_url(format: :atom)
       )
     }
   end

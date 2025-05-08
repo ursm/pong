@@ -41,7 +41,7 @@ class Admin::PostsControllerTest < ActionDispatch::IntegrationTest
 
       body: {
         "hub.mode" => "publish",
-        "hub.url"  => "http://www.example.com/posts.atom"
+        "hub.url"  => "http://www.example.com/feed.atom"
       }
     }
   end
