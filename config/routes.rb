@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   root "posts#index"
 
-  resources :posts, only: %i[index show]
+  resources :posts, only: :show
+  resource  :feed,  only: :show
 
   namespace :admin do
     root "posts#index"
@@ -17,5 +18,5 @@ Rails.application.routes.draw do
     mount Litestream::Engine, at: "/litestream"
   end
 
-  get "feed.atom", to: redirect("posts.atom")
+  get "posts.atom", to: redirect("feed.atom")
 end
