@@ -3,7 +3,7 @@ image: ursm/pong
 
 servers:
   web:
-    - bastion
+    - node1
 
 proxy:
   ssl: true
