@@ -3,7 +3,7 @@ image: ursm/pong
 
 servers:
   web:
-    - node1
+    - app1
 
 proxy:
   ssl: true
