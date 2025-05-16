@@ -54,23 +54,27 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 # Final stage for app image
 FROM base
 
+ARG OVERMIND_VERSION=2.5.1
+
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y procps && \
+    apt-get install --no-install-recommends -y fuse3 tmux && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+COPY --from=flyio/litefs:0.5.14 /usr/local/bin/litefs /usr/local/bin/litefs
+
+RUN curl --silent --location https://github.com/DarthSim/overmind/releases/download/v${OVERMIND_VERSION:?}/overmind-v${OVERMIND_VERSION:?}-linux-amd64.gz | gunzip | install --mode=755 /dev/stdin /usr/local/bin/overmind
 
 # Copy built artifacts: gems, application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
+COPY config/litefs.yml /etc/
+RUN mkdir /litefs
+
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
     useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
+    chown -R rails:rails db log storage tmp /litefs
 USER 1000:1000
 
-# Entrypoint prepares the database.
-ENTRYPOINT ["/rails/bin/docker-entrypoint"]
-
-# Start server via Thruster by default, this can be overwritten at runtime
-EXPOSE 80
-CMD ["./bin/thrust", "./bin/rails", "server"]
+ENTRYPOINT ["litefs", "mount"]
