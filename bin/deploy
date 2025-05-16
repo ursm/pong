@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+%w[app1 app2].each do |host|
+  system "bin/kamal proxy stop --hosts #{host}", exception: true
+
+  begin
+    system "bin/kamal app stop --hosts #{host}", exception: true
+
+    begin
+      system "bin/kamal deploy --hosts #{host}", exception: true
+    rescue RuntimeError
+      system "bin/kamal app start --hosts #{host}", exception: true
+    end
+  ensure
+    system "bin/kamal proxy start --hosts #{host}", exception: true
+  end
+end
