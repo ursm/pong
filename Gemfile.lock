@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rails/rails.git
-  revision: 4077fe0ff07601ae3ea20b14815aed1f94d39bd6
+  revision: fcf01b8820b6e4c3bd70ae3cc653229bbe5a1fba
   specs:
     actioncable (8.1.0.alpha)
       actionpack (= 8.1.0.alpha)
@@ -134,7 +134,7 @@ GEM
       smart_properties
     bigdecimal (3.1.9)
     bindex (0.8.1)
-    bootsnap (1.18.5)
+    bootsnap (1.18.6)
       msgpack (~> 1.2)
     brakeman (7.0.2)
       racc
@@ -292,7 +292,7 @@ GEM
     reline (0.6.1)
       io-console (~> 0.5)
     rexml (3.4.1)
-    rubocop (1.75.5)
+    rubocop (1.75.6)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
