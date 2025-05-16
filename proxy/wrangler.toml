@@ -1,0 +1,7 @@
+name               = 'pong-proxy'
+main               = 'src/index.js'
+compatibility_date = '2023-10-01'
+
+[[kv_namespaces]]
+binding = 'KV'
+id      = '9f9ea2cdc5a64b899590bbf3058dcdb7'

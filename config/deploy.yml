@@ -3,10 +3,23 @@ image: ursm/pong
 
 servers:
   web:
-    - bastion
+    hosts:
+      - app1: litefs1
+      - app2: litefs2
+
+    options:
+      publish:
+        - 20202:20202
+
+      device:
+        - /dev/fuse
+
+      cap-add:
+        - SYS_ADMIN
 
 proxy:
   host: pong.ursm.jp
+  app_port: 8080
 
 registry:
   username: ursm
@@ -16,13 +29,19 @@ registry:
 
 env:
   secret:
-    - LITESTREAM_REPLICA_ENDPOINT
     - RAILS_MASTER_KEY
 
   clear:
-    LITESTREAM_IN_PUMA:  true
-    SOLID_QUEUE_IN_PUMA: true
-    TZ:                  Asia/Tokyo
+    TZ: Asia/Tokyo
+
+  tags:
+    litefs1:
+      LITEFS_ADVERTISE_URL: http://10.0.0.3:20202
+      LITEFS_HOSTNAME:      app1
+
+    litefs2:
+      LITEFS_ADVERTISE_URL: http://10.0.0.4:20202
+      LITEFS_HOSTNAME:      app2
 
 aliases:
   console: app exec --interactive --reuse "bin/rails console"
@@ -40,3 +59,58 @@ builder:
 
 ssh:
   user: ursm
+
+accessories:
+  consul1: &consul
+    image: hashicorp/consul:1.21.0
+    host: bastion
+
+    cmd: >
+      agent
+      -server
+      -data-dir=/consul
+      -client=0.0.0.0
+      -node=bastion
+      -advertise=10.0.0.2
+      -bootstrap-expect=3
+      -retry-join=10.0.0.3
+      -retry-join=10.0.0.4
+
+    volumes:
+      - consul:/consul
+
+    options:
+      publish:
+        - 8300-8301:8300-8301
+        - 8301:8301/udp
+        - 8500:8500
+
+  consul2:
+    <<: *consul
+    host: app1
+
+    cmd: >
+      agent
+      -server
+      -data-dir=/consul
+      -client=0.0.0.0
+      -node=app1
+      -advertise=10.0.0.3
+      -bootstrap-expect=3
+      -retry-join=10.0.0.2
+      -retry-join=10.0.0.4
+
+  consul3:
+    <<: *consul
+    host: app2
+
+    cmd: >
+      agent
+      -server
+      -data-dir=/consul
+      -client=0.0.0.0
+      -node=app2
+      -advertise=10.0.0.4
+      -bootstrap-expect=3
+      -retry-join=10.0.0.2
+      -retry-join=10.0.0.3
