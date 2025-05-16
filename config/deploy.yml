@@ -3,7 +3,7 @@ image: ursm/pong
 
 servers:
   web:
-    - app1
+    - bastion
 
 proxy:
   host: pong.ursm.jp
