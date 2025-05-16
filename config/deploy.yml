@@ -6,7 +6,6 @@ servers:
     - app1
 
 proxy:
-  ssl: true
   host: pong.ursm.jp
 
 registry:
