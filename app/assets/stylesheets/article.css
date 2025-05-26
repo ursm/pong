@@ -51,4 +51,15 @@ article {
   img {
     max-width: 100%;
   }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: calc(1rem * pow(var(--ratio), 0)) auto;
+
+    th, td {
+      padding: calc(1rem * pow(var(--ratio), -3)) calc(1rem * pow(var(--ratio), -1));
+      border: thin solid var(--color-sumi);
+    }
+  }
 }
