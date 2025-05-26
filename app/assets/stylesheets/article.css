@@ -25,7 +25,7 @@ article {
   pre {
     padding: calc(1rem * pow(var(--ratio), 0));
     font-size: 1rem;
-    white-space: pre-wrap;
+    overflow-x: auto;
   }
 
   blockquote {
