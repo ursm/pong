@@ -49,12 +49,6 @@ class Admin::PostsController < ApplicationController
     redirect_to admin_root_path, status: :see_other
   end
 
-  def preview
-    post = Post.new(post_params)
-
-    render turbo_stream: turbo_stream.update("preview", partial: "posts/post", locals: { post: })
-  end
-
   private
 
   def post_params

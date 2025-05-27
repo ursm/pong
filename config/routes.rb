@@ -7,9 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "posts#index"
 
-    resources :posts, only: %i[new create edit update destroy] do
-      post :preview, on: :collection
-    end
+    resources :posts, only: %i[new create edit update destroy]
 
     mount Litestream::Engine, at: "/litestream"
   end
