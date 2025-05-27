@@ -21,7 +21,7 @@ class Admin::PostsController < ApplicationController
     if @post.save
       publish
 
-      redirect_to admin_root_path
+      redirect_to admin_root_path, status: :see_other
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class Admin::PostsController < ApplicationController
     if @post.update(post_params)
       publish
 
-      redirect_to admin_root_path
+      redirect_to admin_root_path, status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end
@@ -46,7 +46,7 @@ class Admin::PostsController < ApplicationController
   def destroy
     Post.find(params.expect(:id)).destroy!
 
-    redirect_to admin_root_path
+    redirect_to admin_root_path, status: :see_other
   end
 
   def preview
