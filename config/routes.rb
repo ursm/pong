@@ -8,9 +8,15 @@ Rails.application.routes.draw do
     root "posts#index"
 
     resources :posts, only: %i[new create edit update destroy]
-
-    mount Litestream::Engine, at: "/litestream"
   end
+
+  post "write", to: "debug#write"
+
+  get "role", to: ->(*) {
+    role = Litefs.primary? ? "primary" : "replica"
+
+    [ 200, { "Content-Type" => "text/plain" }, [ role ] ]
+  }
 
   get "posts.atom", to: redirect("feed.atom")
 
