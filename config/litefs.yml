@@ -1,0 +1,25 @@
+data:
+  dir: /rails/storage/litefs
+
+fuse:
+  dir: /litefs
+
+lease:
+  type: consul
+  advertise-url: $LITEFS_ADVERTISE_URL
+  hostname: $LITEFS_HOSTNAME
+  candidate: true
+
+  consul:
+    url: http://10.0.0.2:8500
+    key: litefs/primary
+
+proxy:
+  addr: :8080
+  target: localhost:80
+  db: production.sqlite3
+
+exec:
+  - cmd: litefs run -promote -- bin/rails db:prepare
+  - cmd: rm -f tmp/overmind.sock
+  - cmd: overmind start -s tmp/overmind.sock -r all

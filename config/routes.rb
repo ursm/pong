@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     root "posts#index"
 
     resources :posts, only: %i[new create edit update destroy]
-
-    mount Litestream::Engine, at: "/litestream"
   end
+
+  post "write", to: "debug#write"
 
   get "posts.atom", to: redirect("feed.atom")
 
