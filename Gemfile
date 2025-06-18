@@ -8,7 +8,7 @@ gem "commonmarker"
 gem "fetch-api"
 gem "image_processing", "~> 1.2"
 gem "importmap-rails"
-gem "kamal", require: false, github: "ursm/kamal", branch: "bws"
+gem "kamal", require: false
 gem "litestream"
 gem "marksmith"
 gem "propshaft"
