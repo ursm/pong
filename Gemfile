@@ -20,6 +20,7 @@ gem "sqlite3"
 gem "stimulus-rails"
 gem "thruster"
 gem "turbo-rails"
+gem "kaminari"
 
 group :development, :test do
   gem "brakeman", require: false

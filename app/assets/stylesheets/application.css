@@ -55,3 +55,22 @@ hr {
   margin: 0 auto;
   padding: calc(1rem * pow(var(--ratio), 1));
 }
+
+/* pagination */
+.pagination {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: calc(1rem * pow(var(--ratio), -2));
+}
+
+.page-link {
+  display: block;
+  padding: calc(1rem * pow(var(--ratio), -3)) calc(1rem * pow(var(--ratio), -2));
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-item.active .page-link {
+  font-weight: bold;
+}

@@ -8,7 +8,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.order(id: :desc)
+    @posts = Post.order(id: :desc).page(params[:page]).per(20)
   end
 
   def new
