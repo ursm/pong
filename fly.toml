@@ -1,0 +1,20 @@
+app = 'pong-ikvm-q'
+
+[env]
+HTTP_PORT = '8080'
+
+[http_service]
+processes            = ['app']
+internal_port        = 8080
+auto_start_machines  = true
+auto_stop_machines   = 'suspend'
+min_machines_running = 0
+
+[mounts]
+source      = 'storage'
+destination = '/rails/storage'
+
+[[vm]]
+cpu_kind = 'shared'
+cpus     = 1
+memory   = '512mb'
