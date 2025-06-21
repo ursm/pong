@@ -45,3 +45,5 @@
 # Ignore Docker-related files
 /.dockerignore
 /Dockerfile*
+
+/fly.toml

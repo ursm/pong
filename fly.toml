@@ -1,20 +1,24 @@
-app = 'pong-ikvm-q'
+app            = 'pong-ikvm-q'
+primary_region = 'nrt'
 
 [env]
-HTTP_PORT = '8080'
+HTTP_PORT           = '8080'
+SOLID_QUEUE_IN_PUMA = 'true'
+TZ                  = 'Asia/Tokyo'
 
 [http_service]
-processes            = ['app']
-internal_port        = 8080
-auto_start_machines  = true
-auto_stop_machines   = 'suspend'
-min_machines_running = 0
+internal_port = 8080
+force_https   = true
+
+[[http_service.checks]]
+grace_period = '10s'
+interval     = '15s'
+timeout      = '1s'
+path         = '/up'
 
 [mounts]
 source      = 'storage'
 destination = '/rails/storage'
 
 [[vm]]
-cpu_kind = 'shared'
-cpus     = 1
-memory   = '512mb'
+memory = '512mb'
