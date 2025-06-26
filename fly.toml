@@ -21,4 +21,6 @@ source      = 'storage'
 destination = '/rails/storage'
 
 [[vm]]
-memory = '512mb'
+cpu_kind = 'shared'
+cpus     = 1
+memory   = '512mb'
