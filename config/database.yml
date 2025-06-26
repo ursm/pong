@@ -16,6 +16,7 @@ production:
   primary: &primary_production
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
+    database: pong_production
   cache:
     <<: *primary_production
     database: pong_production_cache
