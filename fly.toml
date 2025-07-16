@@ -1,5 +1,6 @@
 app            = 'pong-ikvm-q'
 primary_region = 'nrt'
+swap_size_mb   = 256
 
 [env]
 HTTP_PORT           = '8080'
