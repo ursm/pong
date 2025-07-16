@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* Ruby 3.4.4
+* Ruby 3.4.5
 
 ## Setup
 
