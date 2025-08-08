@@ -9,3 +9,16 @@ inherit_gem: { rubocop-rails-omakase: rubocop.yml }
 
 plugins:
   - rubocop-erb
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: no_space
+
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+  SpaceBeforeBlockParameters: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
