@@ -5,7 +5,7 @@ class Marksmith::Renderer
 
   def render
     Commonmarker.to_html(@body, options: {
-      render: { unsafe: true }
+      render: {unsafe: true}
     })
   end
 end

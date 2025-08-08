@@ -6,6 +6,6 @@ Sentry.init do |config|
   config.enable_logs          = true
 
   config.before_send_transaction = ->(event, _hint) {
-    event.transaction == "Rails::HealthController#show" ? nil : event
+    event.transaction == 'Rails::HealthController#show' ? nil : event
   }
 end

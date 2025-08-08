@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-  layout "admin"
+  layout 'admin'
 
   admin_auth = Rails.application.config_for(:admin_auth)
 
@@ -58,11 +58,11 @@ class Admin::PostsController < ApplicationController
   def publish
     return unless Rails.application.config_for(:app).websub
 
-    Fetch::API.fetch "https://pubsubhubbub.appspot.com/publish", **{
-      method: "POST",
+    Fetch::API.fetch 'https://pubsubhubbub.appspot.com/publish', **{
+      method: 'POST',
 
       body: Fetch::URLSearchParams.new(
-        "hub.mode": "publish",
+        "hub.mode": 'publish',
         "hub.url":  feed_url(format: :atom)
       )
     }
