@@ -36,7 +36,7 @@ end
 group :test do
   gem 'capybara'
   gem 'climate_control'
-  gem 'minitest', '< 6', require: false
+  gem 'minitest', '< 6', require: false # https://github.com/rails/rails/issues/56406
   gem 'selenium-webdriver'
   gem 'webmock'
 end
