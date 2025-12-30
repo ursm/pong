@@ -188,8 +188,7 @@ GEM
       logger
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (6.0.0)
-      prism (~> 1.5)
+    minitest (5.27.0)
     msgpack (1.8.0)
     net-http (0.9.1)
       uri (>= 0.11.1)
@@ -400,6 +399,7 @@ DEPENDENCIES
   image_processing
   importmap-rails
   marksmith
+  minitest (< 6)
   pg
   propshaft
   puma

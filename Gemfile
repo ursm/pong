@@ -36,6 +36,7 @@ end
 group :test do
   gem 'capybara'
   gem 'climate_control'
+  gem 'minitest', '< 6', require: false
   gem 'selenium-webdriver'
   gem 'webmock'
 end
