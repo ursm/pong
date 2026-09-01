@@ -6,7 +6,6 @@ gem 'aws-sdk-s3'
 gem 'bootsnap', require: false
 gem 'commonmarker'
 gem 'fetch-api'
-gem 'image_processing'
 gem 'importmap-rails'
 gem 'marksmith'
 gem 'pg'
@@ -36,7 +35,7 @@ end
 group :test do
   gem 'capybara'
   gem 'climate_control'
-  gem 'minitest', '< 6', require: false # https://github.com/rails/rails/issues/56406
+  gem 'minitest'
   gem 'selenium-webdriver'
   gem 'webmock'
 end
