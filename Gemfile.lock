@@ -137,11 +137,10 @@ GEM
     erubi (1.13.1)
     et-orbi (1.4.2)
       tzinfo
-    fetch-api (0.6.0)
+    fetch-api (0.7.0)
       json
       mini_mime
       net-http
-      rack
       singleton
       uri
     fugit (1.14.0)
